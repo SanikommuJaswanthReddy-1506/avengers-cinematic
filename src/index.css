@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Reset & Base ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #050508;
+  color: #e8e8f0;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  cursor: auto;
+}
+
+/* Custom cursor removed — using default OS cursor */
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #050508; }
+::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 2px; }
+
+/* ─── Typography ────────────────────────────────────────── */
+.font-cinematic {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 0.12em;
+}
+
+.font-body {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* ─── Glow Utilities ────────────────────────────────────── */
+.glow-gold   { text-shadow: 0 0 20px #d4af37, 0 0 40px rgba(212,175,55,0.5); }
+.glow-red    { text-shadow: 0 0 20px #e74c3c, 0 0 40px rgba(231,76,60,0.5); }
+.glow-blue   { text-shadow: 0 0 20px #2980b9, 0 0 40px rgba(41,128,185,0.5); }
+.glow-green  { text-shadow: 0 0 20px #27ae60, 0 0 40px rgba(39,174,96,0.5); }
+.glow-yellow { text-shadow: 0 0 20px #f1c40f, 0 0 40px rgba(241,196,15,0.5); }
+
+.box-glow-gold   { box-shadow: 0 0 20px rgba(212,175,55,0.4), 0 0 60px rgba(212,175,55,0.15); }
+.box-glow-red    { box-shadow: 0 0 20px rgba(231,76,60,0.5), 0 0 60px rgba(231,76,60,0.2); }
+.box-glow-blue   { box-shadow: 0 0 20px rgba(41,128,185,0.5), 0 0 60px rgba(41,128,185,0.2); }
+.box-glow-green  { box-shadow: 0 0 20px rgba(39,174,96,0.5), 0 0 60px rgba(39,174,96,0.2); }
+.box-glow-yellow { box-shadow: 0 0 20px rgba(241,196,15,0.4), 0 0 60px rgba(241,196,15,0.15); }
+
+/* ─── Glass Card ────────────────────────────────────────── */
+.glass-card {
+  background: rgba(10, 10, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 16px;
+}
+
+/* ─── Particle Canvas ───────────────────────────────────── */
+#particle-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ─── Intro Screen ──────────────────────────────────────── */
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #000;
+  overflow: hidden;
+}
+
+.intro-hero-name {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 0.2em;
+  font-size: clamp(3rem, 10vw, 8rem);
+}
+
+.assemble-text {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 0.5em;
+  font-size: clamp(3rem, 12vw, 9rem);
+}
+
+/* ─── Arc Reactor ───────────────────────────────────────── */
+@keyframes arcPulse {
+  0%, 100% { box-shadow: 0 0 20px #4fc3f7, 0 0 40px #4fc3f7, 0 0 80px rgba(79,195,247,0.4); }
+  50% { box-shadow: 0 0 40px #4fc3f7, 0 0 80px #4fc3f7, 0 0 120px rgba(79,195,247,0.6); }
+}
+.arc-reactor-pulse { animation: arcPulse 1.5s ease-in-out infinite; }
+
+/* ─── Lightning ─────────────────────────────────────────── */
+@keyframes lightningFlash {
+  0%, 90%, 100% { opacity: 0; }
+  5%, 15% { opacity: 1; }
+  10%, 20% { opacity: 0.3; }
+}
+.lightning-bolt { animation: lightningFlash 0.3s linear infinite; }
+
+/* ─── Screen Shake ──────────────────────────────────────── */
+@keyframes screenShake {
+  0%, 100% { transform: translate(0,0) rotate(0deg); }
+  10% { transform: translate(-8px, -4px) rotate(-0.5deg); }
+  20% { transform: translate(8px, 4px) rotate(0.5deg); }
+  30% { transform: translate(-6px, 2px) rotate(-0.3deg); }
+  40% { transform: translate(6px, -2px) rotate(0.3deg); }
+  50% { transform: translate(-4px, 4px) rotate(-0.2deg); }
+  60% { transform: translate(4px, -4px) rotate(0.2deg); }
+  70% { transform: translate(-2px, 2px) rotate(-0.1deg); }
+  80% { transform: translate(2px, -2px) rotate(0.1deg); }
+}
+.screen-shake { animation: screenShake 0.5s ease; }
+
+/* ─── Shimmer ───────────────────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #d4af37 0%, #fff9e6 30%, #d4af37 60%, #b8860b 100%);
+  background-size: 1000px 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ─── Hero Card Hover ───────────────────────────────────── */
+.hero-card {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+/* ─── Main Sections ─────────────────────────────────────── */
+.section-full {
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+}
+
+/* ─── Modal ─────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Energy Ring ────────────────────────────────────────── */
+@keyframes energyRing {
+  0% { transform: scale(0.8) rotate(0deg); opacity: 0.8; }
+  100% { transform: scale(2) rotate(360deg); opacity: 0; }
+}
+.energy-ring {
+  animation: energyRing 2s ease-out infinite;
+}
+
+/* ─── Intro particles via CSS fallback ──────────────────── */
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-100vh) scale(0); opacity: 0; }
+}
+
+/* ─── Scan Lines ─────────────────────────────────────────── */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.1) 2px,
+    rgba(0,0,0,0.1) 4px
+  );
+  pointer-events: none;
+}
+
+/* ─── Gradient Borders ───────────────────────────────────── */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212,175,55,0.6), transparent 50%, rgba(212,175,55,0.3));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ─── Intro Button ───────────────────────────────────────── */
+.enter-btn {
+  position: relative;
+  overflow: hidden;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 0.3em;
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  background: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  cursor: none;
+  transition: all 0.3s ease;
+}
+.enter-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #d4af37;
+  transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.enter-btn:hover::before { transform: translateX(0); }
+.enter-btn:hover { color: #050508; }
+.enter-btn span { position: relative; z-index: 1; }
+
+/* ─── Skip Button ────────────────────────────────────────── */
+.skip-btn {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.4rem 1rem;
+  background: transparent;
+  cursor: none;
+  transition: all 0.3s ease;
+}
+.skip-btn:hover {
+  color: rgba(255,255,255,0.8);
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* ─── Responsive Helpers ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .intro-hero-name { font-size: 4rem; }
+  .assemble-text { font-size: 4rem; letter-spacing: 0.3em; }
+}

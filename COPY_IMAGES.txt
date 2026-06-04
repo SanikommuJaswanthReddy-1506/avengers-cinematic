@@ -1,0 +1,16 @@
+# Run these commands in your terminal (e:\avengers directory)
+
+mkdir public
+
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\ironman_portrait_1777741031101.png" "public\ironman.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\cap_portrait_1777741047331.png" "public\cap.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\thor_portrait_1777741065682.png" "public\thor.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\hulk_portrait_1777741083292.png" "public\hulk.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\blackwidow_portrait_1777741113004.png" "public\blackwidow.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\spiderman_portrait_1777741134034.png" "public\spiderman.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\drstrange_portrait_1777741149509.png" "public\drstrange.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\blackpanther_portrait_1777741170305.png" "public\blackpanther.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\scarletwitch_portrait_1777741196685.png" "public\scarletwitch.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\captainmarvel_portrait_1777741211596.png" "public\captainmarvel.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\antman_portrait_1777741229812.png" "public\antman.png"
+copy "C:\Users\Mahaveer\.gemini\antigravity\brain\404701ee-542d-4e17-95bf-531a3dcc78c3\hawkeye_portrait_1777741246793.png" "public\hawkeye.png"
